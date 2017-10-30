@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>我的乐淘管理系统-首页</title>
+    <title>我的乐淘管理系统-一级分类</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -30,9 +30,9 @@
                         <span class="glyphicon glyphicon-list"></span>
                         分类管理
                     </a>
-                    <div class="child" style="display: none;">
-                        <a href="#">一级分类</a>
-                        <a href="#">二级分类</a>
+                    <div class="child" style="display: block;">
+                        <a href="first.html" class="now">一级分类</a>
+                        <a href="second.html">二级分类</a>
                     </div>
                 </li>
                 <li>
@@ -54,7 +54,8 @@
         <!-- 面包屑导航 -->
             <ol class="breadcrumb">
               <li><a href="#">管理系统</a></li>
-              <li><a href="#">首页</a></li>
+              <li><a href="#">分类管理</a></li>
+              <li><a href="#">一级分类</a></li>
             </ol>
 
             <!-- 内容区域 -->
@@ -87,7 +88,6 @@
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
-<script src="lib/echarts/echarts.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
 </body>

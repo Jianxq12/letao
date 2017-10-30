@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>我的乐淘管理系统-首页</title>
+    <title>我的乐淘管理系统-用户管理</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -20,7 +20,7 @@
         <div class="nav">
             <ul>
                 <li>
-                    <a href="user.html">
+                    <a href="user.html" class="now">
                         <span class="glyphicon glyphicon-user"></span>
                         用户管理
                     </a>
@@ -31,8 +31,8 @@
                         分类管理
                     </a>
                     <div class="child" style="display: none;">
-                        <a href="#">一级分类</a>
-                        <a href="#">二级分类</a>
+                        <a href="first.html">一级分类</a>
+                        <a href="second.html">二级分类</a>
                     </div>
                 </li>
                 <li>
@@ -54,13 +54,30 @@
         <!-- 面包屑导航 -->
             <ol class="breadcrumb">
               <li><a href="#">管理系统</a></li>
-              <li><a href="#">首页</a></li>
+              <li><a href="#">用户管理</a></li>
             </ol>
 
             <!-- 内容区域 -->
             <div class="lt_content">
-                <div class="pic_left pull-left">11</div>
-                <div class="pic_right pull-right">22</div>
+                
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td width="10%">序号</td>
+                            <td width="30%">用户名</td>
+                            <td width="30%">手机号</td>
+                            <td width="20%">状态</td>
+                            <td width="10%">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
             </div>
         </div>
     </div>
@@ -83,12 +100,33 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.username}}</td>
+        <td>{{v.mobile}}</td>
+        <td>{{v.isDelete==1?'正常':'禁用'}}</td>
+        <td>
+        {{if v.isDelete==1}}
+        <button type="button" class="btn btn-danger btn-sm">禁用</button>
+        {{/if}}
+        {{if v.isDelete==0}}
+        <button type="button" class="btn btn-primary btn-sm">启用</button>
+        {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
+
+
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
-<script src="lib/echarts/echarts.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/index.js"></script>
+<script src="js/user.js"></script>
 </body>
 </html>
