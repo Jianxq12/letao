@@ -29,13 +29,13 @@ $('.lt_history').on('click','.icon_empty',function(){
 // 数组重新存储到缓存中 重新渲染
 $('.lt_history').on('click','.mui-icon-closeempty',function(){
 	var btnArray = ['是','否'];
-	// var $this=$(this);
+	var $this=$(this);
 	mui.confirm('你确定要删除这条记录吗','警告',btnArray,function(data){
 
 		// console.log(data);
 		if(data.index==0){
 			var arr = getHistory();
-			var index = $(this).data('index');
+			var index = $this.data('index');
 			console.log(index);
 			arr.splice(index,1);
 
